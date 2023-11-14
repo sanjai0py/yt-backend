@@ -1,0 +1,32 @@
+### routes:
+
+```txt
+/auth
+    /signup
+        1. should create a new User
+            - id(unique id, not null, primary key, default uuid)
+            - firstname(not null)
+            - lastname(not null)
+            - username(!null, unique)
+            - email(string, nnull, unique, validate:ismail)
+            - password(str, nnull, validate:6)
+            - avatar(str, default:random img)
+            - cover(str, default:rand img)
+            - description(str)
+            - isadmin(bool, !null, default:false)
+        2. hash the user password and save it securly
+    /login
+    /me
+```
+
+### todo:
+
+- should learn sequalize
+- should create api docs using swagger
+- the 
+
+### notes
+
+```txt
+    - the .create method accepts json which then directly populated into the table
+```
