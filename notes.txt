@@ -28,5 +28,5 @@
 ### notes
 
 ```txt
-    - the .create method accepts json which then directly populated into the table
+    - the .create method accepts json which can directly be populated into the table
 ```

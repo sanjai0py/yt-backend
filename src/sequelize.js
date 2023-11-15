@@ -1,4 +1,5 @@
 const { Sequelize, DataTypes } = require("sequelize");
+const uuid = require("uuid");
 
 // bringing the models in to scope
 const UserModel = require("../src/models/User");
@@ -9,13 +10,13 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
 });
 
 // note: sync the db
-(async () => await sequelize.sync({ force: true }))();
+(async () => await sequelize.sync())();
 
 // models
 const User = UserModel(sequelize, DataTypes);
 
-// module.exports = {
-//   User,
-// };
+User.beforeCreate((user, _) => {
+  return (user.id = uuid.v4());
+});
 
 module.exports = User;

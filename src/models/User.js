@@ -1,10 +1,10 @@
 const user = (sequelize, DataTypes) => {
   return sequelize.define("User", {
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.UUID,
       allowNull: false,
       primaryKey: true,
-      defaultValue: DataTypes.STRING,
+      defaultValue: DataTypes.UUIDV4,
     },
     firstname: {
       type: DataTypes.STRING,
@@ -36,13 +36,11 @@ const user = (sequelize, DataTypes) => {
     },
     avatar: {
       type: DataTypes.STRING,
-      defaultValue:
-        "https://res.cloudinary.com/tylerdurden/image/upload/v1602657481/random/pngfind.com-default-image-png-6764065_krremh.png",
+      defaultValue: "https://http.cat/images/200.jpg",
     },
     cover: {
       type: DataTypes.STRING,
-      defaultValue:
-        "https://res.cloudinary.com/tylerdurden/image/upload/v1617334073/random/Rectangle_2_mbyujf.png",
+      defaultValue: "https://http.cat/images/405.jpg",
     },
     channelDescription: {
       type: DataTypes.STRING,
